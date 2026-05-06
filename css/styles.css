@@ -187,10 +187,10 @@ h1, h2, h3, h4 {
 .hero {
   min-height: 100vh;
   padding-top: 72px;
-  background-color: #020916;
+  background-color: #060e1a;
   background-image:
-    radial-gradient(ellipse at 55% 45%, rgba(104,112,119,0.18) 0%, transparent 65%),
-    linear-gradient(180deg, #020916 0%, var(--navy) 45%);
+    radial-gradient(ellipse at 55% 45%, rgba(104,112,119,0.13) 0%, transparent 65%),
+    linear-gradient(180deg, #020916 0%, #060e1a 30%, #091625 70%, #0b1a2c 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,7 +214,7 @@ h1, h2, h3, h4 {
 
 /* ── Page hero (subpages) ── */
 .page-hero {
-  background: linear-gradient(180deg, #020916 0%, var(--navy) 100%);
+  background: linear-gradient(180deg, #020916 0%, #060e1a 40%, #0b1a2c 100%);
   padding: calc(72px + 5rem) 2.5rem 5rem;
   text-align: center;
 }
