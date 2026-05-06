@@ -541,3 +541,44 @@ textarea.form-control { min-height: 130px; resize: vertical; }
 
 /* ── Tile canvas background ── */
 #tile-grid { display: block; }
+
+/* ── Site loader ── */
+#site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #020916;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  pointer-events: none;
+  transition: opacity 0.65s ease;
+}
+#site-loader.out { opacity: 0; }
+
+.loader-svg {
+  width: min(340px, 78vw);
+  height: auto;
+}
+.loader-svg .lp {
+  fill: none;
+  stroke: rgba(191,195,199,0.65);
+  stroke-width: 0.8;
+  stroke-linecap: square;
+}
+
+@keyframes loader-draw { to { stroke-dashoffset: 0; } }
+
+.loader-wordmark {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1rem, 3.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.45em;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding-left: 0.45em; /* offset letter-spacing gap on last char */
+}
+.loader-wordmark.visible { opacity: 1; }
