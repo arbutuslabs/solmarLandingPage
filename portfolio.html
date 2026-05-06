@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Solmar Construction & Development</title>
+  <meta name="description" content="Browse Solmar's portfolio of residential, commercial, and renovation projects across Ontario.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html"><img src="logo.png" alt="Solmar" class="nav-logo"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="nav-cta-wrap"><a href="contact.html" class="btn btn-primary">Get a Quote</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Get a Quote</a>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <p class="label text-steel">Our Work</p>
+      <span class="rule rule-center mt-2 mb-3"></span>
+      <h1>Portfolio</h1>
+      <p class="sub">Fifteen years of projects across Ontario — each one a commitment to craft, detail, and lasting quality.</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Filter -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All Projects</button>
+          <button class="filter-tab" data-filter="residential">Residential</button>
+          <button class="filter-tab" data-filter="commercial">Commercial</button>
+          <button class="filter-tab" data-filter="renovation">Renovation</button>
+          <button class="filter-tab" data-filter="development">Development</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="portfolio-grid">
+
+          <div class="project-card" data-cat="residential">
+            <div class="project-img">
+              <div class="project-img-inner" style="background: linear-gradient(150deg, #0d2137 0%, #1e4a72 100%);"></div>
+              <div class="project-overlay"><span class="project-overlay-label">View Project →</span></div>
+            </div>
+            <div class="project-info">
+              <p class="project-cat">Residential — 2024</p>
+              <p class="project-title">Villa Lumière</p>
+              <p class="project-loc">Muskoka, Ontario &nbsp;·&nbsp; 5,200 sq ft</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-cat="commercial">
+            <div class="project-img">
+              <div class="project-img-inner" style="background: linear-gradient(150deg, #2a2f36 0%, #687077 100%);"></div>
+              <div class="project-overlay"><span class="project-overlay-label">View Project →</span></div>
+            </div>
+            <div class="project-info">
+              <p class="project-cat">Commercial — 2023</p>
+              <p class="project-title">The Harbor Complex</p>
+              <p class="project-loc">Toronto, Ontario &nbsp;·&nbsp; 42,000 sq ft</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-cat="renovation">
+            <div class="project-img">
+              <div class="project-img-inner" style="background: linear-gradient(150deg, #1a2d20 0%, #3d6b4a 100%);"></div>
+              <div class="project-overlay"><span class="project-overlay-label">View Project →</span></div>
+            </div>
+            <div class="project-info">
+              <p class="project-cat">Renovation — 2024</p>
+              <p class="project-title">Riverside Heritage Restore</p>
+              <p class="project-loc">Kingston, Ontario &nbsp;·&nbsp; 3,800 sq ft</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-cat="development">
+            <div class="project-img">
+              <div class="project-img-inner" style="background: linear-gradient(150deg, #1c1f24 0%, #394956 100%);"></div>
+              <div class="project-overlay"><span class="project-overlay-label">View Project →</span></div>
+            </div>
+            <div class="project-info">
+              <p class="project-cat">Development — 2023</p>
+              <p class="project-title">Northgate Subdivision</p>
+              <p class="project-loc">Barrie, Ontario &nbsp;·&nbsp; 18 lots</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-cat="residential">
+            <div class="project-img">
+              <div class="project-img-inner" style="background: linear-gradient(150deg, #1a1030 0%, #3a2060 100%);"></div>
+              <div class="project-overlay"><span class="project-overlay-label">View Project →</span></div>
+            </div>
+            <div class="project-info">
+              <p class="project-cat">Residential — 2023</p>
+              <p class="project-title">The Courtyard Residence</p>
+              <p class="project-loc">Oakville, Ontario &nbsp;·&nbsp; 4,600 sq ft</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-cat="commercial">
+            <div class="project-img">
+              <div class="project-img-inner" style="background: linear-gradient(150deg, #0f1d2d 0%, #2a5070 100%);"></div>
+              <div class="project-overlay"><span class="project-overlay-label">View Project →</span></div>
+            </div>
+            <div class="project-info">
+              <p class="project-cat">Commercial — 2022</p>
+              <p class="project-title">Cascade Office Park</p>
+              <p class="project-loc">Mississauga, Ontario &nbsp;·&nbsp; 78,000 sq ft</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-cat="renovation">
+            <div class="project-img">
+              <div class="project-img-inner" style="background: linear-gradient(150deg, #2a1a10 0%, #6b4a30 100%);"></div>
+              <div class="project-overlay"><span class="project-overlay-label">View Project →</span></div>
+            </div>
+            <div class="project-info">
+              <p class="project-cat">Renovation — 2022</p>
+              <p class="project-title">Maison Beaumont</p>
+              <p class="project-loc">Ottawa, Ontario &nbsp;·&nbsp; Full gut renovation</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-cat="residential">
+            <div class="project-img">
+              <div class="project-img-inner" style="background: linear-gradient(150deg, #101a10 0%, #2a4a2a 100%);"></div>
+              <div class="project-overlay"><span class="project-overlay-label">View Project →</span></div>
+            </div>
+            <div class="project-info">
+              <p class="project-cat">Residential — 2022</p>
+              <p class="project-title">Lakeside Retreat</p>
+              <p class="project-loc">Kawartha Lakes, Ontario &nbsp;·&nbsp; 3,100 sq ft</p>
+            </div>
+          </div>
+
+          <div class="project-card" data-cat="development">
+            <div class="project-img">
+              <div class="project-img-inner" style="background: linear-gradient(150deg, #1a1520 0%, #504060 100%);"></div>
+              <div class="project-overlay"><span class="project-overlay-label">View Project →</span></div>
+            </div>
+            <div class="project-info">
+              <p class="project-cat">Development — 2021</p>
+              <p class="project-title">Elmwood Heights</p>
+              <p class="project-loc">Hamilton, Ontario &nbsp;·&nbsp; 24 townhomes</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+      <div class="container-sm">
+        <p class="label text-silver">Your Project, Next</p>
+        <span class="rule rule-center rule-white mt-2 mb-4"></span>
+        <h2 class="heading-xl text-white mb-3">Let's add yours to the list.</h2>
+        <p style="font-size: 0.9rem; color: var(--steel); line-height: 1.8; max-width: 420px; margin: 0 auto 2.5rem;">
+          Every project on this page started with a single conversation. Let's have ours.
+        </p>
+        <a href="contact.html" class="btn btn-primary">Start a Project</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <img src="logo.png" alt="Solmar" class="footer-logo">
+        <p class="footer-tagline">Premium construction and development across Ontario. Building what endures, crafting what inspires.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Services</p>
+        <ul class="footer-links">
+          <li><a href="services.html">Residential</a></li>
+          <li><a href="services.html">Commercial</a></li>
+          <li><a href="services.html">Renovations</a></li>
+          <li><a href="services.html">Design-Build</a></li>
+          <li><a href="services.html">Site Development</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <ul class="footer-links">
+          <li><a href="mailto:info@solmar.ca">info@solmar.ca</a></li>
+          <li><a href="tel:+14161234567">(416) 123-4567</a></li>
+          <li><a href="#">Ontario, Canada</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Solmar Construction &amp; Development. All rights reserved.</p>
+      <p class="footer-copy">Built with precision.</p>
+    </div>
+  </footer>
+
+  <script src="js/tiles.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
