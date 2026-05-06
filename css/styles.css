@@ -564,9 +564,13 @@ textarea.form-control { min-height: 130px; resize: vertical; }
 }
 .loader-svg .lp {
   fill: none;
-  stroke: rgba(191,195,199,0.65);
+  stroke: rgba(191,195,199,0.75);
   stroke-width: 0.8;
-  stroke-linecap: square;
+  stroke-linecap: butt;
+}
+.loader-svg .lp-floor {
+  stroke: rgba(191,195,199,0.55);
+  stroke-width: 0.65;
 }
 
 @keyframes loader-draw { to { stroke-dashoffset: 0; } }

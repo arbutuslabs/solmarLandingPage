@@ -2,48 +2,84 @@
   if (sessionStorage.getItem('solmar_seen')) return;
   sessionStorage.setItem('solmar_seen', '1');
 
-  /* ── overlay ── */
+  /*
+   * Building in 2-point perspective.
+   * All top/bottom edges are lines converging at VP_L ≈ (-184, 203)
+   * and VP_R ≈ (584, 203) — so every edge is mathematically correct.
+   *
+   * Key vertices:
+   *   Front top:        (200, 70)
+   *   Front bottom:     (200, 220)
+   *   Left back top:    ( 90, 108)
+   *   Left back bottom: ( 90, 215)
+   *   Right back top:   (310, 108)
+   *   Right back bottom:(310, 215)
+   *
+   * Perspective guide lines extend to x = 25 (left) and x = 375 (right).
+   */
+
   const el = document.createElement('div');
   el.id = 'site-loader';
   el.innerHTML = `
     <svg class="loader-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
 
-      <!-- main building outline -->
-      <path class="lp" data-delay="0"    data-dur="0.8"
-            d="M 90 90 L 310 90 L 310 220 L 90 220 Z"/>
+      <!-- 1 · front center vertical edge -->
+      <path class="lp lp-main" data-delay="0"    data-dur="0.35"
+            d="M 200 70 L 200 220"/>
 
-      <!-- roof / penthouse box (3 sides — bottom shared with building top) -->
-      <path class="lp" data-delay="0.45" data-dur="0.35"
-            d="M 240 90 L 240 70 L 160 70 L 160 90"/>
+      <!-- 2 · top perspective lines (center → corners → guide extensions) -->
+      <path class="lp lp-main" data-delay="0.2"  data-dur="0.45"
+            d="M 200 70 L 25 131"/>
+      <path class="lp lp-main" data-delay="0.2"  data-dur="0.45"
+            d="M 200 70 L 375 131"/>
 
-      <!-- floor lines -->
-      <path class="lp" data-delay="0.65" data-dur="0.3"
-            d="M 90 133 L 310 133"/>
-      <path class="lp" data-delay="0.8"  data-dur="0.3"
-            d="M 90 177 L 310 177"/>
+      <!-- 3 · left and right vertical back edges -->
+      <path class="lp lp-main" data-delay="0.5"  data-dur="0.3"
+            d="M 90 108 L 90 215"/>
+      <path class="lp lp-main" data-delay="0.5"  data-dur="0.3"
+            d="M 310 108 L 310 215"/>
 
-      <!-- column lines -->
-      <path class="lp" data-delay="0.9"  data-dur="0.25"
-            d="M 163 90 L 163 220"/>
-      <path class="lp" data-delay="1.0"  data-dur="0.25"
-            d="M 237 90 L 237 220"/>
+      <!-- 4 · bottom perspective lines (center → corners → guide extensions) -->
+      <path class="lp lp-main" data-delay="0.65" data-dur="0.4"
+            d="M 200 220 L 25 212"/>
+      <path class="lp lp-main" data-delay="0.65" data-dur="0.4"
+            d="M 200 220 L 375 212"/>
 
-      <!-- corner registration marks -->
-      <path class="lp" data-delay="1.05" data-dur="0.2"
-            d="M 68 90 L 90 90 L 90 68"/>
-      <path class="lp" data-delay="1.1"  data-dur="0.2"
-            d="M 332 90 L 310 90 L 310 68"/>
-      <path class="lp" data-delay="1.15" data-dur="0.2"
-            d="M 68 220 L 90 220 L 90 242"/>
-      <path class="lp" data-delay="1.2"  data-dur="0.2"
-            d="M 332 220 L 310 220 L 310 242"/>
+      <!--
+        Floor lines computed from VP_L formula: y_back = 0.7135 * y_front + 58.18
+        8 floors at front-edge y = 87, 103, 120, 137, 153, 170, 187, 203
+        Corresponding back y  =      120, 132, 144, 156, 167, 179, 192, 203
+        Lines draw sequentially top→bottom as dashoffset animates.
+      -->
+
+      <!-- 5 · left face floor lines -->
+      <path class="lp lp-floor" data-delay="0.85" data-dur="0.65"
+            d="M 200  87 L  90 120
+               M 200 103 L  90 132
+               M 200 120 L  90 144
+               M 200 137 L  90 156
+               M 200 153 L  90 167
+               M 200 170 L  90 179
+               M 200 187 L  90 192
+               M 200 203 L  90 203"/>
+
+      <!-- 6 · right face floor lines -->
+      <path class="lp lp-floor" data-delay="0.85" data-dur="0.65"
+            d="M 200  87 L 310 120
+               M 200 103 L 310 132
+               M 200 120 L 310 144
+               M 200 137 L 310 156
+               M 200 153 L 310 167
+               M 200 170 L 310 179
+               M 200 187 L 310 192
+               M 200 203 L 310 203"/>
 
     </svg>
     <p class="loader-wordmark">SOLMAR</p>
   `;
   document.body.prepend(el);
 
-  /* ── animate paths — lengths calculated from live SVG ── */
+  /* ── set dash lengths from live SVG geometry, then start animations ── */
   requestAnimationFrame(() => {
     el.querySelectorAll('.lp').forEach(p => {
       const len = p.getTotalLength();
@@ -54,10 +90,7 @@
     });
   });
 
-  /* ── wordmark fades in when drawing completes ── */
-  setTimeout(() => el.querySelector('.loader-wordmark').classList.add('visible'), 1500);
-
-  /* ── overlay fades out, then is removed ── */
-  setTimeout(() => el.classList.add('out'), 2200);
-  setTimeout(() => el.remove(),             2900);
+  setTimeout(() => el.querySelector('.loader-wordmark').classList.add('visible'), 1600);
+  setTimeout(() => el.classList.add('out'), 2300);
+  setTimeout(() => el.remove(),             3000);
 })();
