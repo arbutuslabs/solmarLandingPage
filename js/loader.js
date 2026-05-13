@@ -1,6 +1,6 @@
 (function () {
-  if (sessionStorage.getItem('solmar_seen')) return;
-  sessionStorage.setItem('solmar_seen', '1');
+  if (sessionStorage.getItem('varta_seen')) return;
+  sessionStorage.setItem('varta_seen', '1');
 
   /*
    * Building in 2-point perspective.
@@ -75,7 +75,7 @@
                M 200 203 L 310 203"/>
 
     </svg>
-    <p class="loader-wordmark">SOLMAR</p>
+    <p class="loader-wordmark">VARTA HOMES</p>
   `;
   document.body.prepend(el);
 

@@ -46,7 +46,7 @@ tabBtns.forEach(btn => {
 // See: https://developers.google.com/apps-script/guides/web
 const FORM_ENDPOINT = '';
 
-document.querySelectorAll('form[data-solmar]').forEach(form => {
+document.querySelectorAll('form[data-varta]').forEach(form => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('[type="submit"]');
