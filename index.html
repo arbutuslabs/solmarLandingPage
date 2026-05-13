@@ -7,7 +7,7 @@
   <meta name="description" content="Varta Homes builds premium residences and commercial developments across Ontario. Quality craftsmanship, on time and on budget.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="has-video-hero">
   <script src="js/loader.js"></script>
 
   <!-- NAV -->
@@ -36,12 +36,16 @@
 
     <!-- HERO -->
     <section class="hero">
+      <!-- Swap src for your video file; poster= shows while video loads or on mobile -->
+      <video class="hero-video" autoplay muted loop playsinline poster="media/hero-poster.jpg">
+        <source src="media/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="label text-silver fade-up">Premium Construction &amp; Development</p>
         <h1 class="hero-title text-white fade-up d1">Varta Homes</h1>
-        <span class="rule rule-center rule-white fade-up d2"></span>
-        <p class="hero-sub fade-up d3">Building what endures. Crafting what inspires.</p>
-        <div class="hero-ctas fade-up d4">
+        <p class="hero-sub fade-up d2">Building what endures. Crafting what inspires.</p>
+        <div class="hero-ctas fade-up d3">
           <a href="portfolio.html" class="btn btn-primary">View Our Work</a>
           <a href="contact.html" class="btn btn-outline-white">Get a Quote</a>
         </div>
@@ -254,7 +258,6 @@
     </div>
   </footer>
 
-  <script src="js/tiles.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

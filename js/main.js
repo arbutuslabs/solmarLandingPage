@@ -1,3 +1,11 @@
+/* ── Nav scroll behaviour (transparent → solid on scroll) ── */
+const nav = document.querySelector('.nav');
+if (nav && document.body.classList.contains('has-video-hero')) {
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
 /* ── Mobile nav ── */
 const hamburger = document.querySelector('.nav-hamburger');
 const mobileNav = document.getElementById('mobile-nav');
