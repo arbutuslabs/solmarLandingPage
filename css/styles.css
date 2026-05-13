@@ -41,8 +41,9 @@ h1, h2, h3, h4 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.25rem, 5vw, 4rem);
   font-weight: 700;
-  letter-spacing: 0.18em;
-  white-space: nowrap;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
 }
 
 .heading-xl { font-size: clamp(2.5rem, 5vw, 5rem); }
@@ -245,18 +246,17 @@ body:not(.has-video-hero) .nav {
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 680px;
+  max-width: 600px;
   text-align: left;
 }
 
 .hero-sub {
-  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-size: clamp(0.8rem, 1.2vw, 0.92rem);
   font-weight: 300;
-  letter-spacing: 0.04em;
-  color: var(--silver);
-  margin-top: 0.75rem;
+  letter-spacing: 0.02em;
+  line-height: 1.85;
+  color: rgba(191,195,199,0.8);
   margin-bottom: 2rem;
-  max-width: 480px;
 }
 
 .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
