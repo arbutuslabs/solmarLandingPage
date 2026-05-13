@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Exploration — Varta Homes</title>
+
+  <!-- Current font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,300&family=Raleway:wght@300;400;500;600;700&family=Josefin+Sans:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #f5f4f2;
+      --card:     #ffffff;
+      --ink:      #1a1a1a;
+      --muted:    #6b6b6b;
+      --rule:     #e0ddd9;
+      --accent:   #0f1d2d;
+      --tag-bg:   #ededeb;
+      --tag-text: #555;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      padding: 0 0 6rem;
+    }
+
+    /* ── header ── */
+    .page-header {
+      padding: 4rem 2.5rem 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--rule);
+    }
+    .page-header-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .page-header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .page-header p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 540px;
+      line-height: 1.75;
+    }
+
+    /* ── section label ── */
+    .section-label {
+      max-width: 900px;
+      margin: 3rem auto 1.25rem;
+      padding: 0 2.5rem;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── cards ── */
+    .cards {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 2.75rem 3rem;
+      border: 1px solid var(--rule);
+      position: relative;
+    }
+    .card.current {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: white;
+    }
+
+    /* meta row */
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .card-name {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .card.current .card-name { color: rgba(255,255,255,0.5); }
+
+    .tags {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .tag {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border-radius: 2px;
+    }
+    .card.current .tag {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* specimen */
+    .specimen-heading {
+      line-height: 1.05;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+    .card.current .specimen-heading { color: #fff; }
+
+    .specimen-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+    .card.current .specimen-sub { color: rgba(255,255,255,0.45); }
+
+    .divider {
+      width: 36px;
+      height: 1px;
+      background: var(--rule);
+      margin-bottom: 1.5rem;
+    }
+    .card.current .divider { background: rgba(255,255,255,0.2); }
+
+    .specimen-body {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 540px;
+    }
+    .card.current .specimen-body { color: rgba(255,255,255,0.5); }
+
+    .specimen-alphabet {
+      margin-top: 1.75rem;
+      font-size: 0.8rem;
+      color: #bbb;
+      letter-spacing: 0.12em;
+      line-height: 1.8;
+    }
+    .card.current .specimen-alphabet { color: rgba(255,255,255,0.2); }
+
+    /* sizing helpers */
+    .sz-xl  { font-size: clamp(3rem, 7vw, 5.5rem); }
+    .sz-lg  { font-size: clamp(2.75rem, 6vw, 4.75rem); }
+    .sz-md  { font-size: clamp(2.5rem, 5.5vw, 4.25rem); }
+
+    @media (max-width: 600px) {
+      .card { padding: 2rem 1.5rem; }
+      .page-header { padding: 2.5rem 1.5rem 2rem; }
+      .cards, .section-label { padding: 0 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <p class="page-header-label">Internal — Not Published</p>
+    <h1>Font Exploration</h1>
+    <p>Comparing typeface options for Varta Homes. The current font (Cinzel) is shown first in dark for reference, followed by alternatives that are warmer and more approachable while keeping a premium feel.</p>
+  </div>
+
+  <!-- ─────────────────── CURRENT ─────────────────── -->
+  <p class="section-label">Current</p>
+  <div class="cards">
+
+    <div class="card current">
+      <div class="card-meta">
+        <span class="card-name">Cinzel — Currently in use</span>
+        <div class="tags">
+          <span class="tag">Classical</span>
+          <span class="tag">Formal</span>
+          <span class="tag">Roman</span>
+        </div>
+      </div>
+      <p class="specimen-heading sz-xl" style="font-family:'Cinzel',serif; font-weight:700;">Varta Homes</p>
+      <p class="specimen-sub" style="font-family:'Cinzel',serif; font-weight:400;">Premium Construction &amp; Development</p>
+      <div class="divider"></div>
+      <p class="specimen-body" style="font-family:'Cinzel',serif; font-weight:400;">Building what endures. Crafting what inspires. From foundation to final finish, every Varta Homes project is built with precision and lasting quality.</p>
+      <p class="specimen-alphabet" style="font-family:'Cinzel',serif;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z &nbsp; 0 1 2 3 4 5 6 7 8 9</p>
+    </div>
+
+  </div>
+
+  <!-- ─────────────────── SERIF ALTERNATIVES ─────────────────── -->
+  <p class="section-label">Serif Alternatives — Warmer, More Approachable</p>
+  <div class="cards">
+
+    <!-- Cormorant Garamond -->
+    <div class="card">
+      <div class="card-meta">
+        <span class="card-name">Cormorant Garamond</span>
+        <div class="tags">
+          <span class="tag">Refined</span>
+          <span class="tag">Warm</span>
+          <span class="tag">Humanist</span>
+          <span class="tag">Elegant</span>
+        </div>
+      </div>
+      <p class="specimen-heading sz-xl" style="font-family:'Cormorant Garamond',serif; font-weight:600; letter-spacing:0.06em;">Varta Homes</p>
+      <p class="specimen-sub" style="font-family:'Cormorant Garamond',serif; font-weight:300;">Premium Construction &amp; Development</p>
+      <div class="divider"></div>
+      <p class="specimen-body" style="font-family:'Cormorant Garamond',serif; font-weight:400; font-size:0.95rem;">Building what endures. Crafting what inspires. From foundation to final finish, every Varta Homes project is built with precision and lasting quality.</p>
+      <p class="specimen-alphabet" style="font-family:'Cormorant Garamond',serif; font-weight:300;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z &nbsp; 0 1 2 3 4 5 6 7 8 9</p>
+    </div>
+
+    <!-- Playfair Display -->
+    <div class="card">
+      <div class="card-meta">
+        <span class="card-name">Playfair Display</span>
+        <div class="tags">
+          <span class="tag">Editorial</span>
+          <span class="tag">Bold</span>
+          <span class="tag">Trusted</span>
+          <span class="tag">Premium</span>
+        </div>
+      </div>
+      <p class="specimen-heading sz-lg" style="font-family:'Playfair Display',serif; font-weight:700; letter-spacing:0.04em;">Varta Homes</p>
+      <p class="specimen-sub" style="font-family:'Playfair Display',serif; font-weight:400;">Premium Construction &amp; Development</p>
+      <div class="divider"></div>
+      <p class="specimen-body" style="font-family:'Playfair Display',serif;">Building what endures. Crafting what inspires. From foundation to final finish, every Varta Homes project is built with precision and lasting quality.</p>
+      <p class="specimen-alphabet" style="font-family:'Playfair Display',serif; font-weight:400;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z &nbsp; 0 1 2 3 4 5 6 7 8 9</p>
+    </div>
+
+    <!-- Lora -->
+    <div class="card">
+      <div class="card-meta">
+        <span class="card-name">Lora</span>
+        <div class="tags">
+          <span class="tag">Approachable</span>
+          <span class="tag">Contemporary</span>
+          <span class="tag">Warm</span>
+          <span class="tag">Readable</span>
+        </div>
+      </div>
+      <p class="specimen-heading sz-lg" style="font-family:'Lora',serif; font-weight:700; letter-spacing:0.03em;">Varta Homes</p>
+      <p class="specimen-sub" style="font-family:'Lora',serif; font-weight:400;">Premium Construction &amp; Development</p>
+      <div class="divider"></div>
+      <p class="specimen-body" style="font-family:'Lora',serif;">Building what endures. Crafting what inspires. From foundation to final finish, every Varta Homes project is built with precision and lasting quality.</p>
+      <p class="specimen-alphabet" style="font-family:'Lora',serif; font-weight:400;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z &nbsp; 0 1 2 3 4 5 6 7 8 9</p>
+    </div>
+
+    <!-- Libre Baskerville -->
+    <div class="card">
+      <div class="card-meta">
+        <span class="card-name">Libre Baskerville</span>
+        <div class="tags">
+          <span class="tag">Classic</span>
+          <span class="tag">Trustworthy</span>
+          <span class="tag">Grounded</span>
+        </div>
+      </div>
+      <p class="specimen-heading sz-md" style="font-family:'Libre Baskerville',serif; font-weight:700; letter-spacing:0.03em;">Varta Homes</p>
+      <p class="specimen-sub" style="font-family:'Libre Baskerville',serif; font-weight:400;">Premium Construction &amp; Development</p>
+      <div class="divider"></div>
+      <p class="specimen-body" style="font-family:'Libre Baskerville',serif;">Building what endures. Crafting what inspires. From foundation to final finish, every Varta Homes project is built with precision and lasting quality.</p>
+      <p class="specimen-alphabet" style="font-family:'Libre Baskerville',serif; font-weight:400;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z &nbsp; 0 1 2 3 4 5 6 7 8 9</p>
+    </div>
+
+    <!-- DM Serif Display -->
+    <div class="card">
+      <div class="card-meta">
+        <span class="card-name">DM Serif Display</span>
+        <div class="tags">
+          <span class="tag">Modern Serif</span>
+          <span class="tag">Confident</span>
+          <span class="tag">Clean</span>
+        </div>
+      </div>
+      <p class="specimen-heading sz-xl" style="font-family:'DM Serif Display',serif; font-weight:400; letter-spacing:0.04em;">Varta Homes</p>
+      <p class="specimen-sub" style="font-family:'DM Serif Display',serif;">Premium Construction &amp; Development</p>
+      <div class="divider"></div>
+      <p class="specimen-body" style="font-family:'DM Serif Display',serif;">Building what endures. Crafting what inspires. From foundation to final finish, every Varta Homes project is built with precision and lasting quality.</p>
+      <p class="specimen-alphabet" style="font-family:'DM Serif Display',serif;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z &nbsp; 0 1 2 3 4 5 6 7 8 9</p>
+    </div>
+
+    <!-- Fraunces -->
+    <div class="card">
+      <div class="card-meta">
+        <span class="card-name">Fraunces</span>
+        <div class="tags">
+          <span class="tag">Expressive</span>
+          <span class="tag">Distinctive</span>
+          <span class="tag">Warm</span>
+          <span class="tag">Organic</span>
+        </div>
+      </div>
+      <p class="specimen-heading sz-xl" style="font-family:'Fraunces',serif; font-weight:700; letter-spacing:0.03em;">Varta Homes</p>
+      <p class="specimen-sub" style="font-family:'Fraunces',serif; font-weight:300;">Premium Construction &amp; Development</p>
+      <div class="divider"></div>
+      <p class="specimen-body" style="font-family:'Fraunces',serif; font-weight:300; font-size:0.95rem;">Building what endures. Crafting what inspires. From foundation to final finish, every Varta Homes project is built with precision and lasting quality.</p>
+      <p class="specimen-alphabet" style="font-family:'Fraunces',serif; font-weight:300;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z &nbsp; 0 1 2 3 4 5 6 7 8 9</p>
+    </div>
+
+  </div>
+
+  <!-- ─────────────────── SANS ALTERNATIVES ─────────────────── -->
+  <p class="section-label">Sans-Serif Alternatives — Clean, Architectural, Friendly</p>
+  <div class="cards">
+
+    <!-- Raleway -->
+    <div class="card">
+      <div class="card-meta">
+        <span class="card-name">Raleway</span>
+        <div class="tags">
+          <span class="tag">Elegant Sans</span>
+          <span class="tag">Architectural</span>
+          <span class="tag">Refined</span>
+        </div>
+      </div>
+      <p class="specimen-heading sz-xl" style="font-family:'Raleway',sans-serif; font-weight:700; letter-spacing:0.16em;">Varta Homes</p>
+      <p class="specimen-sub" style="font-family:'Raleway',sans-serif; font-weight:300;">Premium Construction &amp; Development</p>
+      <div class="divider"></div>
+      <p class="specimen-body" style="font-family:'Raleway',sans-serif; font-weight:400;">Building what endures. Crafting what inspires. From foundation to final finish, every Varta Homes project is built with precision and lasting quality.</p>
+      <p class="specimen-alphabet" style="font-family:'Raleway',sans-serif; font-weight:300;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z &nbsp; 0 1 2 3 4 5 6 7 8 9</p>
+    </div>
+
+    <!-- Josefin Sans -->
+    <div class="card">
+      <div class="card-meta">
+        <span class="card-name">Josefin Sans</span>
+        <div class="tags">
+          <span class="tag">Geometric</span>
+          <span class="tag">Precise</span>
+          <span class="tag">Modern</span>
+          <span class="tag">Structural</span>
+        </div>
+      </div>
+      <p class="specimen-heading sz-xl" style="font-family:'Josefin Sans',sans-serif; font-weight:700; letter-spacing:0.2em;">Varta Homes</p>
+      <p class="specimen-sub" style="font-family:'Josefin Sans',sans-serif; font-weight:300;">Premium Construction &amp; Development</p>
+      <div class="divider"></div>
+      <p class="specimen-body" style="font-family:'Josefin Sans',sans-serif; font-weight:400;">Building what endures. Crafting what inspires. From foundation to final finish, every Varta Homes project is built with precision and lasting quality.</p>
+      <p class="specimen-alphabet" style="font-family:'Josefin Sans',sans-serif; font-weight:300;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z &nbsp; 0 1 2 3 4 5 6 7 8 9</p>
+    </div>
+
+    <!-- Outfit -->
+    <div class="card">
+      <div class="card-meta">
+        <span class="card-name">Outfit</span>
+        <div class="tags">
+          <span class="tag">Fresh</span>
+          <span class="tag">Geometric</span>
+          <span class="tag">Friendly</span>
+          <span class="tag">Contemporary</span>
+        </div>
+      </div>
+      <p class="specimen-heading sz-xl" style="font-family:'Outfit',sans-serif; font-weight:700; letter-spacing:0.1em;">Varta Homes</p>
+      <p class="specimen-sub" style="font-family:'Outfit',sans-serif; font-weight:300; letter-spacing:0.22em;">Premium Construction &amp; Development</p>
+      <div class="divider"></div>
+      <p class="specimen-body" style="font-family:'Outfit',sans-serif; font-weight:400;">Building what endures. Crafting what inspires. From foundation to final finish, every Varta Homes project is built with precision and lasting quality.</p>
+      <p class="specimen-alphabet" style="font-family:'Outfit',sans-serif; font-weight:300;">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>a b c d e f g h i j k l m n o p q r s t u v w x y z &nbsp; 0 1 2 3 4 5 6 7 8 9</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
