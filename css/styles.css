@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
 
 /* ── Brand tokens ── */
 :root {
@@ -26,7 +26,7 @@ a { color: inherit; }
 
 /* ── Type scale ── */
 h1, h2, h3, h4 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: 0.06em;
@@ -38,7 +38,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(2.25rem, 5vw, 4rem);
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -288,7 +288,7 @@ body:not(.has-video-hero) .nav {
   text-align: center;
 }
 .stat-number {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
   color: var(--navy);
@@ -315,7 +315,7 @@ body:not(.has-video-hero) .nav {
 .service-card:hover .service-rule { background: rgba(191,195,199,0.5); }
 
 .service-icon  { color: var(--steel); margin-bottom: 1.25rem; transition: color 0.25s; }
-.service-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; color: var(--navy); margin-bottom: 0.75rem; transition: color 0.25s; }
+.service-title { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.06em; color: var(--navy); margin-bottom: 0.75rem; transition: color 0.25s; }
 .service-rule  { width: 1.75rem; height: 1px; background: var(--silver); margin-bottom: 1rem; transition: background 0.25s; }
 .service-desc  { font-size: 0.85rem; color: var(--steel); line-height: 1.8; transition: color 0.25s; }
 
@@ -368,7 +368,7 @@ body:not(.has-video-hero) .nav {
 }
 .project-card:hover .project-overlay { opacity: 1; }
 .project-overlay-label {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   color: var(--white);
   letter-spacing: 0.08em;
@@ -376,7 +376,7 @@ body:not(.has-video-hero) .nav {
 
 .project-info  { padding: 1.1rem 0; }
 .project-cat   { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--steel); }
-.project-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-top: 0.3rem; }
+.project-title { font-family: 'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-top: 0.3rem; }
 .project-loc   { font-size: 0.75rem; color: var(--steel); margin-top: 0.15rem; }
 
 /* ── Filter tabs ── */
@@ -428,7 +428,7 @@ body:not(.has-video-hero) .nav {
   border: 1px solid var(--silver);
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 1.5rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--navy);
@@ -436,7 +436,7 @@ body:not(.has-video-hero) .nav {
   position: relative;
   z-index: 1;
 }
-.process-title { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; }
+.process-title { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; }
 .process-desc  { font-size: 0.8rem; color: var(--steel); line-height: 1.75; }
 @media (max-width: 700px) {
   .process-grid { grid-template-columns: repeat(2, 1fr); }
@@ -446,7 +446,7 @@ body:not(.has-video-hero) .nav {
 /* ── Values ── */
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
 @media (max-width: 700px) { .values-grid { grid-template-columns: 1fr; gap: 2rem; } }
-.value-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 700; color: var(--lightgray); line-height: 1; }
+.value-num { font-family: 'Montserrat', sans-serif; font-size: 3.5rem; font-weight: 700; color: var(--lightgray); line-height: 1; }
 
 /* ── Two-col layout ── */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
@@ -459,7 +459,7 @@ body:not(.has-video-hero) .nav {
 
 .team-img { width: 100%; padding-bottom: 115%; position: relative; overflow: hidden; margin-bottom: 1.25rem; }
 .team-img-inner { position: absolute; inset: 0; }
-.team-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; }
+.team-name { font-family: 'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 600; }
 .team-role { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--steel); margin-top: 0.3rem; }
 
 /* ── Contact layout ── */
@@ -625,7 +625,7 @@ textarea.form-control { min-height: 130px; resize: vertical; }
 @keyframes loader-draw { to { stroke-dashoffset: 0; } }
 
 .loader-wordmark {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(1rem, 3.5vw, 1.75rem);
   font-weight: 700;
   letter-spacing: 0.45em;
