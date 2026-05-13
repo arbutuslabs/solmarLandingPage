@@ -37,6 +37,14 @@ h1, h2, h3, h4 {
   letter-spacing: 0.15em;
 }
 
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+
 .heading-xl { font-size: clamp(2.5rem, 5vw, 5rem); }
 .heading-lg { font-size: clamp(2rem, 3.5vw, 3.5rem); }
 .heading-md { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
@@ -86,7 +94,7 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary          { background: var(--silver); color: var(--navy); border-color: var(--silver); }
-.btn-primary:hover    { background: var(--white);  color: var(--navy); border-color: var(--white); }
+.btn-primary:hover    { background: #9aa0a6;       color: var(--navy); border-color: #9aa0a6; }
 
 .btn-navy             { background: var(--navy); color: var(--white); border-color: var(--navy); }
 .btn-navy:hover       { background: #1a3050; border-color: #1a3050; }
