@@ -358,6 +358,8 @@ body:not(.has-video-hero) .nav {
   position: absolute;
   inset: 0;
   transition: transform 0.55s ease;
+  background-size: cover;
+  background-position: center;
 }
 .project-card:hover .project-img-inner { transform: scale(1.04); }
 
